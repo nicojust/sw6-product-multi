@@ -1,0 +1,55 @@
+{
+  "name": "nico-just/sw6-product-multi",
+  "description": "Product Multi",
+  "license": "MIT",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "keywords": [
+    "product",
+    "multi",
+    "checkout",
+    "shopping",
+    "cart"
+  ],
+  "authors": [
+    {
+      "name": "Nico Just",
+      "email": "just.nico@yahoo.de"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.6.0"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.43"
+  },
+  "autoload": {
+    "psr-4": {
+      "NicoJust\\ProductMulti\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NicoJust\\ProductMulti\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true,
+      "symfony/runtime": true
+    }
+  },
+  "extra": {
+    "copyright": "Nico Just",
+    "description": {
+      "de-DE": "Füge mehrere Produkte zum Warenkorb hinzu.",
+      "en-GB": "Add multiple products to shopping cart."
+    },
+    "label": {
+      "de-DE": "Product Multi",
+      "en-GB": "Product Multi"
+    },
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "shopware-plugin-class": "NicoJust\\ProductMulti\\ProductMulti"
+  }
+}

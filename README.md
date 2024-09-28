@@ -1,1 +1,5 @@
-# sw6-product-multi
+# Product Multi
+
+## Versions
+
+[Changelog](CHANGELOG.md)
