@@ -28,11 +28,6 @@
       "NicoJust\\ProductMulti\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "NicoJust\\ProductMulti\\Tests\\": "tests/"
-    }
-  },
   "config": {
     "allow-plugins": {
       "ergebnis/composer-normalize": true,
