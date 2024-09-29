@@ -1,0 +1,19 @@
+{
+  "fast-order": {
+    "main": {
+      "menuLabel": "Schnelle Bestellung",
+      "menuDescription": "Verwalte Schnelle Bestellungen"
+    },
+    "list": {
+      "title": "Schnelle Bestellung",
+      "columns": {
+        "sessionId": "Session ID",
+        "productId": "Produkt ID",
+        "qty": "Menge",
+        "comment": "Kommentar",
+        "createdAt": "Erstellt Am",
+        "updatedAt": "Aktualisiert Am"
+      }
+    }
+  }
+}

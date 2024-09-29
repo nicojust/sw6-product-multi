@@ -4,13 +4,15 @@
 	{{ parent() }}
 
 	<a
-		class="nav-link main-navigation-link"
+		class="nav-link main-navigation-link fast-order-nav"
 		href="{{ url('frontend.fast-order.index') }}" itemprop="url"
-		title="{{ 'navigation.item.fastOrder' | trans }}">
+		title="{{ 'navigation.item.label' | trans }}">
 		<div
 			class="main-navigation-link-text">
 			<span
-				itemprop="name">{{ 'navigation.item.fastOrder' | trans }}</span>
+				itemprop="name">&gt;&gt;
+				{{ 'navigation.item.label' | trans }}
+				&lt;&lt;</span>
 		</div>
 	</a>
 {% endblock %}

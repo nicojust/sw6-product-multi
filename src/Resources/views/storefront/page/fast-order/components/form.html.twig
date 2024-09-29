@@ -17,7 +17,7 @@
 			class="mb-3">
 			<label
 				class="form-label"
-				for="csvUpload">Upload Product CSV</label>
+				for="csvUpload">{{ 'content.input.csvUpload' | trans }}</label>
 			<input
 				id="csvUpload"
 				class="form-control fast-order-file-input"
@@ -33,9 +33,9 @@
 				<div
 					class="fast-order-item row g-0">
 					{% if isFirstLoop %}
-						<h4>Required</h4>
+						<h4>{{ 'content.input.required' | trans }}</h4>
 					{% elseif i == 2%}
-						<h4>Optional</h4>
+						<h4>{{ 'content.input.optional' | trans }}</h4>
 					{% endif %}
 
 					<div
@@ -44,8 +44,7 @@
 							class="form-control my-2"
 							name="fastOrder[product][]"
 							list="product-list"
-							placeholder="Search Products..."
-							{% if isFirstLoop %} required
+							placeholder="{{ 'content.input.placeholder.products' | trans }}" {% if isFirstLoop %} required
 							{% endif %}/>
 
 					</div>
@@ -57,8 +56,7 @@
 							type="number"
 							min="1"
 							max="100"
-							placeholder="Quantity"
-							{% if isFirstLoop %} required
+							placeholder="{{ 'content.input.placeholder.quantity' | trans }}" {% if isFirstLoop %} required
 							{% endif %}>
 					</div>
 				</div>
@@ -70,9 +68,9 @@
 		</div>
 
 		<div
+			style="display: none;"
 			class="d-flex justify-content-end mt-3">
-			<h3>Total amount:
-				{{ cartTotalPrice }}</h3>
+			<h3>{{ 'content.priceTotalAmount' | trans({'%price%': cartTotalPrice}) }}</h3>
 		</div>
 
 		<div
@@ -80,17 +78,17 @@
 			<button
 				type="button"
 				class="fast-order-new-row d-inline-flex justify-content-between col-2 btn btn-primary me-3">
-				<span>Add new row</span>
+				<span>{{ 'content.button.addNewRow' | trans }}</span>
 				{% sw_icon 'plus' %}</button>
 
 			<button
 				type="reset"
-				class="fast-order-reset col-2 btn btn-secondary">Reset</button>
+				class="fast-order-reset col-2 btn btn-secondary">{{ 'content.button.reset' | trans }}</button>
 
 			<button
 				type="submit"
 				class="fast-order-submit d-inline-flex justify-content-between col-2 btn btn-primary">
-				<span>Add to shopping cart</span>
+				<span>{{ 'content.button.addToCart' | trans }}</span>
 				{% sw_icon 'bag' %}</button>
 		</div>
 	</div>

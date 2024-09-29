@@ -1,5 +1,4 @@
 import template from './fast-order-list.html.twig';
-import './fast-order-list.scss';
 
 const { Component } = Shopware;
 const { Criteria } = Shopware.Data;
@@ -17,26 +16,61 @@ Component.register('fast-order-list', {
             repository: null,
             criteria: new Criteria(),
             columns: [
-                { property: 'sessionId', label: 'Session ID' },
-                { property: 'productId', label: 'Product ID' },
-                { property: 'qty', label: 'Quantity' },
-                { property: 'comment', label: 'Comment', inlineEdit: 'string' },
-                { property: 'createdAt', label: 'Created At' }
+                {
+                    property: 'sessionId',
+                    label: this.$t('fast-order.list.columns.sessionId')
+                },
+                {
+                    property: 'productId',
+                    label: this.$t('fast-order.list.columns.productId')
+                },
+                {
+                    property: 'qty',
+                    label: this.$t('fast-order.list.columns.qty')
+                },
+                {
+                    property: 'comment',
+                    label: this.$t('fast-order.list.columns.comment'),
+                    inlineEdit: 'string'
+                },
+                {
+                    property: 'createdAt',
+                    label: this.$t('fast-order.list.columns.createdAt')
+                },
+                {
+                    property: 'updatedAt',
+                    label: this.$t('fast-order.list.columns.updatedAt'),
+                    visible: false
+                }
             ]
         };
     },
 
+    computed: {
+        getCriteria() {
+            if (this.criteria) {
+                return this.criteria
+            }
+
+            return new Criteria();
+        },
+    },
+
     methods: {
-        loadFastOrders() {
+        getList() {
             const context = Shopware.Context.api;
-            this.repository.search(this.criteria, context).then(result => {
+            this.repository.search(this.getCriteria, context).then(result => {
                 this.fastOrders = result;
             });
+        },
+
+        onRefresh() {
+            this.getList();
         }
     },
 
     created() {
         this.repository = this.repositoryFactory.create('fast_order');
-        this.loadFastOrders();
+        this.getList();
     },
 });

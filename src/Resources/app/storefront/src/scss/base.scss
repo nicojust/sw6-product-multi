@@ -4,3 +4,11 @@
         top: unset !important;
     }
 }
+
+.fast-order-nav {
+    font-size: 2rem;
+    background: linear-gradient(to right, red, coral, darkgoldenrod);
+    background-clip: border-box;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,7 +1,27 @@
 {
   "navigation": {
     "item": {
-      "fastOrder": "Schnelle Bestellung"
+      "label": "Schnelle Bestellung"
+    }
+  },
+  "content": {
+    "title": "Schnelle Bestellung",
+    "description": "Füge mehrere Produkte auf einmal zum Warenkorb hinzu. Es kann nach Produkten gesucht oder eine CSV Datei hochgeladen werden. Testdateien können im Ordner unter %path% gefunden werden.",
+    "disclaimer": "Es muss mindestens ein Produkt vorhanden sein um es in den Warenkorb hinzuzufügen. Die Menge kann nicht kleiner als %min% und nicht mehr als %max% betragen. Leere oder doppelte Einträge werden herausgefiltert.",
+    "priceTotalAmount": "Zwischensumme: %price%",
+    "input": {
+      "csvUpload": "Lade eine Produkt CSV hoch",
+      "placeholder": {
+        "products": "Suche nach Produkten...",
+        "quantity": "Menge"
+      },
+      "required": "Erforderlich",
+      "optional": "Optional"
+    },
+    "button": {
+      "addNewRow": "Neue Zeile hinzufügen",
+      "reset": "Reset",
+      "addToCart": "Zum Warenkorb hinzufügen"
     }
   }
 }

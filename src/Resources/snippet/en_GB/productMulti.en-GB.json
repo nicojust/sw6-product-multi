@@ -1,7 +1,27 @@
 {
   "navigation": {
     "item": {
-      "fastOrder": "Fast Order"
+      "label": "Fast Order"
+    }
+  },
+  "content": {
+    "title": "Fast Order",
+    "description": "Add multiple products to the shopping cart! You can search for products manually or load a csv with the corresponding product data. Samples can be found within the %path% folder.",
+    "disclaimer": "There must be at least one product and the quantity can not be less than %min% or greater than %max%. Empty or duplicate entries will be filtered.",
+    "priceTotalAmount": "Total amount: %price%",
+    "input": {
+      "csvUpload": "Upload Product CSV",
+      "placeholder": {
+        "products": "Search products...",
+        "quantity": "Quantity"
+      },
+      "required": "Required",
+      "optional": "Optional"
+    },
+    "button": {
+      "addNewRow": "Add new row",
+      "reset": "Reset",
+      "addToCart": "Add to shopping cart"
     }
   }
 }

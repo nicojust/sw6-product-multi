@@ -1,5 +1,8 @@
 import './page/fast-order-list';
 
+import de_DE from './snippet/de-DE';
+import en_GB from './snippet/en-GB';
+
 Shopware.Module.register('fast-order', {
     type: 'plugin',
     name: 'fast-order',
@@ -7,6 +10,11 @@ Shopware.Module.register('fast-order', {
     description: 'fast-order.main.menuDescription',
     color: '#ff3d58',
     icon: 'default-shopping-paper-bag-product',
+
+    snippets: {
+        'de-DE': de_DE,
+        'en-GB': en_GB
+    },
 
     routes: {
         list: {

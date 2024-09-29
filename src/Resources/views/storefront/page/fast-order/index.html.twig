@@ -6,13 +6,11 @@
 		<div
 			class="container-fluid py-5">
 			<h1
-				class="display-5 fw-bold">Fast Order</h1>
+				class="display-5 fw-bold">{{ 'content.title' | trans }}</h1>
 			<p
-				class="col-md-8 fs-4">Add multiple products to the shopping cart! You can search for products manually or load a csv with the corresponding product data. Examples can be found within the
-				<code>plugin_root/samples</code>
-				folder.</p>
+				class="col-md-8 fs-4">{{ 'content.description' | trans({'%path%': '<code>plugin_root/samples</code>'}) }}</p>
 			<p
-				class="col-md-8 fs-4">There must be at least one product and the quantity can not be less than 1 or greater than 100. Empty or duplicate entries will be filtered.</p>
+				class="col-md-8 fs-4">{{ 'content.disclaimer' | trans({'%min%': 1, '%max%': 100}) }}</p>
 		</div>
 	</div>
 
