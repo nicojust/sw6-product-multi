@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_content %}
+	<div
+		class="p-5 mb-4 bg-light rounded-3">
+		<div
+			class="container-fluid py-5">
+			<h1
+				class="display-5 fw-bold">Fast Order</h1>
+			<p
+				class="col-md-8 fs-4">Add multiple products to the shopping cart! You can search for products manually or load a csv with the corresponding product data. Examples can be found within the
+				<code>plugin_root/samples</code>
+				folder.</p>
+			<p
+				class="col-md-8 fs-4">There must be at least one product and the quantity can not be less than 1 or greater than 100. Empty or duplicate entries will be filtered.</p>
+		</div>
+	</div>
+
+	{% sw_include '@ProductMulti/storefront/page/fast-order/components/form.html.twig' %}
+{% endblock %}

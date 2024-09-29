@@ -1,0 +1,97 @@
+<div
+	class="container">
+	<form
+		id="fast-order-form"
+		action="{{ path('frontend.fast-order.post') }}" method="post"
+		data-fast-order-plugin>
+
+		<datalist
+			id="product-list">
+			{% for product in products %}
+				<option
+					value="{{ product.id }}">{{ product.translated.name }}</option>
+			{% endfor %}
+		</datalist>
+
+		<div
+			class="mb-3">
+			<label
+				class="form-label"
+				for="csvUpload">Upload Product CSV</label>
+			<input
+				id="csvUpload"
+				class="form-control fast-order-file-input"
+				type="file"
+				accept=".csv">
+		</div>
+
+		<div
+			class="fast-order-items">
+			{% for i in 1..formFieldNumber %}
+				{% set isFirstLoop = i == 1 %}
+
+				<div
+					class="fast-order-item row g-0">
+					{% if isFirstLoop %}
+						<h4>Required</h4>
+					{% elseif i == 2%}
+						<h4>Optional</h4>
+					{% endif %}
+
+					<div
+						class="col-10 pe-3">
+						<input
+							class="form-control my-2"
+							name="fastOrder[product][]"
+							list="product-list"
+							placeholder="Search Products..."
+							{% if isFirstLoop %} required
+							{% endif %}/>
+
+					</div>
+					<div
+						class="col-2">
+						<input
+							class="form-control my-2"
+							name="fastOrder[qty][]"
+							type="number"
+							min="1"
+							max="100"
+							placeholder="Quantity"
+							{% if isFirstLoop %} required
+							{% endif %}>
+					</div>
+				</div>
+				{% if isFirstLoop %}
+					<hr
+						class="bg-success border-2 border-top border-success my-8"/>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		<div
+			class="d-flex justify-content-end mt-3">
+			<h3>Total amount:
+				{{ cartTotalPrice }}</h3>
+		</div>
+
+		<div
+			class="d-flex justify-content-between g-0 mt-3">
+			<button
+				type="button"
+				class="fast-order-new-row d-inline-flex justify-content-between col-2 btn btn-primary me-3">
+				<span>Add new row</span>
+				{% sw_icon 'plus' %}</button>
+
+			<button
+				type="reset"
+				class="fast-order-reset col-2 btn btn-secondary">Reset</button>
+
+			<button
+				type="submit"
+				class="fast-order-submit d-inline-flex justify-content-between col-2 btn btn-primary">
+				<span>Add to shopping cart</span>
+				{% sw_icon 'bag' %}</button>
+		</div>
+	</div>
+</form></div>

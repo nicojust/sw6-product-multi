@@ -1,0 +1,19 @@
+{% block fast_order_list %}
+	<sw-page
+		class="fast-order-list">
+		<template
+			#smart-bar-header>
+			<h2>{{ $tc('fast-order.list.title') }}</h2>
+		</template>
+
+		<template
+			#content>
+			<sw-entity-listing
+				:items="fastOrders"
+				:repository="repository"
+				:columns="columns"
+				:criteria="criteria"
+				:allow-inline-edit="true"></sw-entity-listing>
+		</template>
+	</sw-page>
+{% endblock %}

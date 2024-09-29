@@ -1,14 +1,33 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="NicoJust\ProductMulti\Storefront\Controller\FastOrderController" public="true">
+            <argument type="service" id="NicoJust\ProductMulti\Storefront\Page\FastOrder\FastOrderPageLoader"/>
+            <argument type="service" id="product.repository"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory"/>
+            <argument type="service" id="Shopware\Core\System\Currency\CurrencyFormatter"/>
+            <argument type="service" id="fast_order.repository"/>
 
-        <service id="NicoJust\Command\ExampleCommand">
-            <tag name="console.command"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <call method="setTwig">
+                <argument type="service" id="twig"/>
+            </call>
         </service>
 
+        <service id="NicoJust\ProductMulti\Storefront\Page\FastOrder\FastOrderPageLoader" public="true">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="NicoJust\ProductMulti\Core\Content\FastOrder\FastOrderDefinition">
+            <tag name="shopware.entity.definition" entity="fast_order"/>
+        </service>
     </services>
 </container>

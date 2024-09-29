@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
+
+{% block layout_main_navigation_menu_items %}
+	{{ parent() }}
+
+	<a
+		class="nav-link main-navigation-link"
+		href="{{ url('frontend.fast-order.index') }}" itemprop="url"
+		title="{{ 'navigation.item.fastOrder' | trans }}">
+		<div
+			class="main-navigation-link-text">
+			<span
+				itemprop="name">{{ 'navigation.item.fastOrder' | trans }}</span>
+		</div>
+	</a>
+{% endblock %}
